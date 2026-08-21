@@ -8,9 +8,10 @@ class Solution {
             sum += nums[i];
             int need = sum - k;
             if(map.containsKey(need)){
-                cnt += map.get(need);
+                cnt++;
+                map.put(need, map.getOrDefault(need, 0) + 1);
             }
-            map.put(sum, map.getOrDefault(sum, 0) + 1);
+            map.put(sum,i);
         }
         return cnt;
     }
