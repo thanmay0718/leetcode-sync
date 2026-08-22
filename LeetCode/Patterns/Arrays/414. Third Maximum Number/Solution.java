@@ -1,26 +1,24 @@
 class Solution {
     public int thirdMax(int[] nums) {
-        long max = Integer.MIN_VALUE;
-        int secMax = Integer.MIN_VALUE;
-        int thirdMax = Integer.MIN_VALUE;
+        long max = Long.MIN_VALUE;
+        long secMax = Long.MIN_VALUE;
+        long thirdMax = Long.MIN_VALUE;
 
         for(int i : nums){
+            if (i == max || i == secMax || i == thirdMax) {
+                continue;
+            }
             if(i > max){
                 thirdMax = secMax;
                 secMax = max;
                 max = i;
-            } else if (i != max && i > secMax){
+            } else if (i > secMax){
                 thirdMax = secMax;
                 secMax = i;
-            } else if((i != max) && (i != secMax)
-                        && i > thirdMax ){
-                            thirdMax = i;
-                        }
-
+            } else if(i > thirdMax){
+                thirdMax = i;
+            }
         }
-        if(thirdMax == Integer.MIN_VALUE){
-            return max;
-        }
-        return thirdMax;
+        return (int) (thirdMax == Long.MIN_VALUE ? max : thirdMax);
     }
 }
