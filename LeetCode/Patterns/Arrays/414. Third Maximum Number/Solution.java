@@ -9,11 +9,11 @@ class Solution {
                 thirdMax = secMax;
                 secMax = max;
                 max = i;
-            } else if (i != max && i >= secMax){
+            } else if (i != max && i > secMax){
                 thirdMax = secMax;
                 secMax = i;
             } else if((i != max) && (i != secMax)
-                        && i >= thirdMax ){
+                        && i > thirdMax ){
                             thirdMax = i;
                         }
 
