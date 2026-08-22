@@ -10,7 +10,6 @@
  */
 class Solution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        // Brute Force
         ArrayList<Integer> arr = new ArrayList<>();
         ListNode l = list1;
         while(l != null){
