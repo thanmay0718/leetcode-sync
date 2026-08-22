@@ -1,6 +1,6 @@
 class Solution {
     public int thirdMax(int[] nums) {
-        int max = Integer.MIN_VALUE;
+        long max = Integer.MIN_VALUE;
         int secMax = Integer.MIN_VALUE;
         int thirdMax = Integer.MIN_VALUE;
 
