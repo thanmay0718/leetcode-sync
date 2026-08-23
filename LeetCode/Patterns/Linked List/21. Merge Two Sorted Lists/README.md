@@ -8,8 +8,8 @@
 Linked List, Recursion
 
 ### 🚀 Performance
-- **Runtime:** 0 ms
-- **Memory:** 44.2 MB
+- **Runtime:** 2 ms
+- **Memory:** 44.5 MB
 
 ---
 
