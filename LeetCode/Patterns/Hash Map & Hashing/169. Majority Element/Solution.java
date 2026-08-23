@@ -1,19 +1,23 @@
 class Solution {
-    // Brute Force
-    // T.C : O(n^2)
+    // Boyer Moore Voting Algo (Optimal)
+    // T.C : O(n)
     // S.C : O(1)
     public int majorityElement(int[] nums) {
-        for(int i = 0; i < nums.length; i++){
-            int cnt = 0;
-            for(int j = i; j < nums.length; j++){
-                if(nums[j] == nums[i]){
-                    cnt++;
-                }
+        int candidate = nums[0];
+        int cnt = 1;
+        for(int i = 1; i < nums.length; i++){
+            if(cnt == 0){
+                cnt = 1;
+                candidate = nums[i];
+                continue;
             }
-            if(cnt > nums.length / 2){
-                return nums[i];
+
+            if(nums[i] == candidate){
+                cnt++;
+            } else {
+                cnt--;
             }
         }
-        return -1;
+        return candidate;
     }
 }
