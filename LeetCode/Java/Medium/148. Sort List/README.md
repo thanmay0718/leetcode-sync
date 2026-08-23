@@ -8,8 +8,8 @@
 Linked List, Two Pointers, Divide and Conquer, Sorting, Merge Sort
 
 ### 🚀 Performance
-- **Runtime:** 14 ms
-- **Memory:** 62.6 MB
+- **Runtime:** N/A
+- **Memory:** N/A
 
 ---
 
