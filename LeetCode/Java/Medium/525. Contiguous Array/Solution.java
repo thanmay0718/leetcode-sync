@@ -1,4 +1,6 @@
 class Solution {
+    // Brute Force : O(n^2)
+    // Chevcking eaach and every Index's to get a maximum of equals between both 0's and 1's 
     public int findMaxLength(int[] nums) {
         int max = 0;
         int i = 0;
