@@ -1,16 +1,18 @@
 class Solution {
     public int subarraysDivByK(int[] nums, int k) {
-        // Brute Force - O(n^2)
-        int cnt = 0;
-        for(int i = 0; i < nums.length; i++){
-            int sum = 0;
-            for(int j = i; j < nums.length; j++){
-                sum += nums[j];
-                if(sum % k == 0){
-                    cnt++;
-                }
-            }
+       Map<Integer, Integer> map = new HashMap<>();
+       map.put(0,1);
+       int cnt = 0;
+       int prefix = 0;
+       for(int i = 0; i < nums.length; i++){
+        prefix += nums[i];
+        // to avoid negative numbers
+        int rem = ((prefix % k) + k) % k;
+        if(map.containsKey(rem)){
+            cnt += map.get(rem);
         }
-        return cnt;
+        map.put(rem, map.getOrDefault(rem, 0) + 1);
+       } 
+       return cnt;
     }
 }
