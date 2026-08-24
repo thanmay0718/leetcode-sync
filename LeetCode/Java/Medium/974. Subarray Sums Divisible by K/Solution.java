@@ -1,6 +1,6 @@
 class Solution {
     public int subarraysDivByK(int[] nums, int k) {
-        // Brute Force
+        // Brute Force - O(n^2)
         int cnt = 0;
         for(int i = 0; i < nums.length; i++){
             int sum = 0;
