@@ -1,6 +1,6 @@
 # 📝 974. Subarray Sums Divisible by K (LeetCode)
 
-🔗 [Problem Link](https://leetcode.com/problems/subarray-sums-divisible-by-k)
+🔗 [Problem Link](https://leetcode.com/problems/subarray-sums-divisible-by-k/)
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-orange) ![Language](https://img.shields.io/badge/Language-Java-blue)
 
