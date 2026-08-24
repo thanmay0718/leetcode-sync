@@ -9,34 +9,18 @@
  * }
  */
 class Solution {
-
-    // Brute Force
-    private ListNode convertToDLL(Set<Integer> set){
-        ListNode head = null;
-        ListNode temp = null;
-
-        for (int value : set) {
-
-            ListNode newNode = new ListNode(value);
-
-            if (head == null) {
-                head = newNode;
-                temp = newNode;
-            } else {
-                temp.next = newNode;
-                temp = newNode;
-            }
-        }
-        return head;
-    }
-
+    // Optimized Code 
+    // Time Complexity : O(n) Just for Travesing and space is O(1)
     public ListNode deleteDuplicates(ListNode head) {
-        ListNode temp = head;
-        Set<Integer> set = new TreeSet<>();
-        while(temp != null){
-            set.add(temp.val);
-            temp = temp.next;
+      ListNode temp = head;
+      while(temp != null){
+        ListNode nextNode = temp.next;
+        while(nextNode != null && nextNode.val == temp.val){
+            nextNode = nextNode.next;
         }
-        return convertToDLL(set);
+        temp.next = nextNode;
+        temp = temp.next;
+      }  
+      return head;
     }
 }
