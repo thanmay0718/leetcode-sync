@@ -1,23 +1,25 @@
 class Solution {
-    // Brute Force : O(n^2)
-    // Chevcking eaach and every Index's to get a maximum of equals between both 0's and 1's 
+    // Optimized : O(n)
     public int findMaxLength(int[] nums) {
-        int max = 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(0, -1);
+        int maxLen = 0;
+        int sum = 0;
         int i = 0;
-        for(i = 0; i < nums.length; i++){
-            int zero = 0;
-            int one = 0;
-            for(int j = i; j < nums.length; j++){
-                if(nums[j] == 0){
-                    zero++;
-                } else {
-                    one++;
-                }
-                if(zero == one){
-                    max = Math.max(max, j - i + 1);
-                }
+        while(i < nums.length){
+            if(nums[i] == 0){
+                sum -= 1;
+            } else {
+                sum += 1;
             }
+
+            if(map.containsKey(sum)){
+                maxLen = Math.max(maxLen, i - map.get(sum));
+            } else {
+                map.put(sum, i);
+            }
+            i++;
         }
-        return max;
+        return maxLen;
     }
 }
