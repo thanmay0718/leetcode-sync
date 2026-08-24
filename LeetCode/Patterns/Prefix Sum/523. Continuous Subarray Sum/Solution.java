@@ -10,7 +10,7 @@ class Solution {
                 if(i - map.get(sum % k) >= 2){
                     return true;
                 } else {
-                    map.put(sum, map.getOrDefault(sum, 0) + 1);
+                    map.put(sum, map.getOrDefault(sum, 0);
                 }
             }
         }
