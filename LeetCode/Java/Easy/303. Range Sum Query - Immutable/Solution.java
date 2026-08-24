@@ -1,16 +1,15 @@
 class NumArray {
-    // Brute Force (O(n))
-    private int[] nums;
+    // Prefix : Time Complexity = O(n) , Space Complexity : O(n)
+    private int[] prefix;
     public NumArray(int[] nums) {
-        this.nums = nums;
+        prefix = new int[nums.length + 1];
+        for(int i = 0; i < nums.length; i++){
+            prefix[i + 1] = prefix[i] + nums[i];
+        }
     }
     
     public int sumRange(int left, int right) {
-        int total = 0;
-        for(int i = left; i <= right; i++){
-            total += nums[i];
-        }
-        return total;
+        return prefix[right + 1] - prefix[left];
     }
 }
 
