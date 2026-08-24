@@ -1,4 +1,5 @@
 class NumArray {
+    // Brute Force (O(n))
     private int[] nums;
     public NumArray(int[] nums) {
         this.nums = nums;
