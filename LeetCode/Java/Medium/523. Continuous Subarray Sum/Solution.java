@@ -11,7 +11,7 @@ class Solution {
                     return true;
                 }
             } else {
-                map.put(sum, i);
+                map.put(sum % k, i);
             }
         }
         return false;
