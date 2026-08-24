@@ -1,4 +1,5 @@
 class Solution {
+    // Prefix , Time Complexity : O(N), Space Complexity : O(N)
     public boolean checkSubarraySum(int[] nums, int k) {
         int n = nums.length;
         Map<Integer, Integer> map = new HashMap<>();
