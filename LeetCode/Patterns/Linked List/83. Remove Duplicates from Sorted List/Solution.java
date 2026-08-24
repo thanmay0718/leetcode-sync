@@ -10,17 +10,18 @@
  */
 class Solution {
     // Optimized Code 
-    // Time Complexity : O(n) Just for Travesing and space is O(1)
+    // Time Complexity : O(n) Just for Travesing and space is O
     public ListNode deleteDuplicates(ListNode head) {
-      ListNode temp = head;
-      while(temp != null){
-        ListNode nextNode = temp.next;
-        while(nextNode != null && nextNode.val == temp.val){
-            nextNode = nextNode.next;
+      ListNode current = head;
+
+        while (current != null && current.next != null) {
+            if (current.val == current.next.val) {
+                current.next = current.next.next;
+            } else {
+                current = current.next;
+            }
         }
-        temp.next = nextNode;
-        temp = temp.next;
-      }  
-      return head;
+
+        return head;
     }
 }
