@@ -10,7 +10,7 @@
  */
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
-        // Brute Force
+        // Brute Force - Using Extra Space O(n)
         Map<Integer, Integer> map = new HashMap<>();
         ListNode temp = head;
         while(temp != null){
