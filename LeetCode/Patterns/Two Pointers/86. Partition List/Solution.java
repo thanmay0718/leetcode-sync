@@ -9,48 +9,26 @@
  * }
  */
 class Solution {
-
-    // Brute force because of using extra space
-    private ListNode convertedIntoLL(int[] arr){
-
-        if(arr.length == 0){
-            return null;
-        }
-
-        ListNode head = new ListNode(arr[0]);
-        ListNode temp =  head;
-
-        for(int i = 1; i < arr.length; i++){
-            temp.next = new ListNode(arr[i]);
-            temp = temp.next;
-        }
-        return head;
-    }
-
+    // Optimized - by using two dummy lists and at the end connecting them without any  extra spaces so, O(1) Space
     public ListNode partition(ListNode head, int x) {
+        ListNode less = new ListNode(0);
+        ListNode great = new ListNode(0);
+        ListNode lessPointer = less;
+        ListNode greatPointer = great;
 
-        // Stored into list
-        List<Integer> list = new ArrayList<>();
         ListNode temp = head;
         while(temp != null){
-            list.add(temp.val);
+            if(temp.val < x){
+                lessPointer.next = temp;
+                lessPointer = lessPointer.next; 
+            } else {
+                greatPointer.next = temp;
+                greatPointer = greatPointer.next;
+            }
             temp = temp.next;
         }
-
-        // Placing in partition conditions
-        int[] arr = new int[list.size()];
-        int k = 0;
-        for(int i = 0; i < list.size(); i++){
-            if(list.get(i) < x){
-                arr[k++] = list.get(i);
-            }
-        }
-
-        for(int i = 0; i < list.size(); i++){
-            if(list.get(i) >= x){
-                arr[k++] = list.get(i);
-            }
-        }
-        return convertedIntoLL(arr);
+        lessPointer.next = great.next;
+        greatPointer.next = null;
+        return less.next;
     }
 }
