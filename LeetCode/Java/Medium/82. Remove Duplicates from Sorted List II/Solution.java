@@ -10,22 +10,23 @@
  */
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
-        // Brute Force - Using Extra Space O(n)
-        Map<Integer, Integer> map = new HashMap<>();
-        ListNode temp = head;
-        while(temp != null){
-            map.put(temp.val, map.getOrDefault(temp.val, 0) + 1);
-            temp = temp.next;
-        }
-
+        // Optimized Code : No extra Space
         ListNode dummy = new ListNode(0, head);
-        ListNode cur = dummy;
-        while(cur.next != null){
-            if(map.get(cur.next.val) > 1){
-                cur.next = cur.next.next;
+        ListNode prev = dummy;
+
+        ListNode curr = head;
+        while(curr != null){
+            if(curr.next != null && curr.val == curr.next.val){
+
+                while(curr.next != null && curr.val == curr.next.val){
+                    curr = curr.next;
+                }
+                prev.next = curr.next;
+
             } else {
-                cur = cur.next;
+                prev = curr;
             }
+            curr = curr.next;
         }
         return dummy.next;
     }
