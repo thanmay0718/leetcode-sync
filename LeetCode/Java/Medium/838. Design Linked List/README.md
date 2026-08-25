@@ -8,7 +8,7 @@
 Linked List, Design
 
 ### 🚀 Performance
-- **Runtime:** 102 ms
+- **Runtime:** 9 ms
 - **Memory:** 46.7 MB
 
 ---
