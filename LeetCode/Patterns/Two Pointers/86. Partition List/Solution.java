@@ -10,6 +10,7 @@
  */
 class Solution {
 
+    // Brute force because of using extra space
     private ListNode convertedIntoLL(int[] arr){
 
         if(arr.length == 0){
