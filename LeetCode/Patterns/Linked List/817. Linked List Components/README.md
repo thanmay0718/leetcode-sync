@@ -1,6 +1,6 @@
 # 📝 817. Linked List Components (LeetCode)
 
-🔗 [Problem Link](https://leetcode.com/problems/linked-list-components/)
+🔗 [Problem Link](https://leetcode.com/problems/linked-list-components)
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-orange) ![Language](https://img.shields.io/badge/Language-Java-blue)
 
