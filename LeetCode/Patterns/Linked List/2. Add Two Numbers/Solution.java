@@ -8,34 +8,40 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
 class Solution {
+    // Optimal Approach : One pass with no extra space and passing with O(max(l1, l2)) 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode dummuy = new ListNode(-1);
-        ListNode curr = dummuy;
-        ListNode t1 = l1;
-        ListNode t2 = l2;
+        ListNode dummy = new ListNode(0);
+        ListNode temp = dummy;
         int carry = 0;
-        while(t1 != null || t2 != null){
-            int sum = carry;
-            if( t1 != null){
-                sum += t1.val;
-                t1 = t1.next;
-            }
 
-            if(t2 != null){
-                sum += t2.val;
-                t2 = t2.next;
-            }
+        while(l1 != null || l2 != null || carry != 0){
+            int val1 = (l1 != null) ? l1.val : 0;
+            int val2 = (l2 != null) ? l2.val : 0;
+            int sum = val1 + val2 + carry;
 
-            ListNode newNode = new ListNode(sum % 10);
             carry = sum / 10;
-            curr.next = newNode;
-            curr = curr.next;
+            temp.next = new ListNode(sum % 10);
+            temp = temp.next;
+
+            if(l1 != null){
+                l1 = l1.next;
+            }
+
+            if(l2 != null){
+                l2 = l2.next;
+            }
         }
-        if(carry != 0){
-            ListNode newNode = new ListNode(carry);
-            curr.next = newNode;
-        }
-        return dummuy.next; 
+        return dummy.next;
     }
 }
