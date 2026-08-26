@@ -1,18 +1,8 @@
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
 class Solution {
 
-    private boolean checkNum(int[] nums, int num){
-        for(int i = 0; i < nums.length; i++){
-            if(nums[i] == num){
+    private boolean checkNum(int[] nums, int num) {
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == num) {
                 return true;
             }
         }
@@ -20,13 +10,25 @@ class Solution {
     }
 
     public int numComponents(ListNode head, int[] nums) {
+
+        int count = 0;
         ListNode temp = head;
-        while(temp != null){
-            if(!checkNum(nums,temp.val)){
-                return temp.val;
+
+        while (temp != null) {
+
+            // Current node belongs to nums
+            if (checkNum(nums, temp.val)) {
+
+                // If next node is null OR next node is not in nums,
+                // this component ends here.
+                if (temp.next == null || !checkNum(nums, temp.next.val)) {
+                    count++;
+                }
             }
+
             temp = temp.next;
         }
-        return 1;
+
+        return count;
     }
 }
