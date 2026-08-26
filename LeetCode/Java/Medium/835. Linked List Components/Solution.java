@@ -21,12 +21,15 @@ class Solution {
 
     public int numComponents(ListNode head, int[] nums) {
         ListNode temp = head;
+        int count = 0;
         while(temp != null){
-            if(!checkNum(nums,temp.val)){
-                return temp.val;
+            if(checkNum(nums,temp.val)){
+                if (temp.next == null || !checkNum(nums, temp.next.val)) {
+                    count++;
+                }
             }
             temp = temp.next;
         }
-        return 1;
+        return count;
     }
 }
