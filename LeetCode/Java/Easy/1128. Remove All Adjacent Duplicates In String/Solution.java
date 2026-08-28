@@ -1,4 +1,5 @@
 class Solution {
+    // Time : O(n) and Space : O(n)
     public String removeDuplicates(String s) {
         Stack<Character> st = new Stack<>();
         for(int i = 0; i < s.length(); i++){
