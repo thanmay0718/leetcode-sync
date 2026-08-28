@@ -1,17 +1,35 @@
 class Solution {
-    public boolean isValid(String s) {
-    Stack<Character> stack = new Stack<>();
-    Map<Character, Character> matchMap = Map.of(')', '(', ']', '[', '}', '{');
-
-    for (char c : s.toCharArray()) {
-        if (matchMap.containsKey(c)) {
-            if (stack.isEmpty() || stack.pop() != matchMap.get(c)) {
-                return false;
+    // Time Complexity : O(n)
+    // Space Complexity : O(n) 
+    private boolean isMatched(char open, char close){
+        if((open == '(' && close == ')') ||
+            (open == '{' && close == '}') ||
+            (open == '[' && close == ']'))
+            {
+                return true;
             }
-        } else {
-            stack.push(c);
-        }
+        return false;
     }
-    return stack.isEmpty();
+
+    public boolean isValid(String s) {
+        Stack< Character > st = new Stack<>();
+        for(int i = 0; i < s.length(); i++){
+            if((s.charAt(i) == '(') ||
+               (s.charAt(i) == '{') ||
+               (s.charAt(i) == '['))
+            {
+                st.push(s.charAt(i));
+            } else {
+                if(st.isEmpty()){
+                    return false;
+                }
+                char open = st.peek();
+                st.pop();
+                if(!isMatched(open, s.charAt(i))){
+                    return false;
+                }
+            }
+        }
+        return st.isEmpty();
     }
 }
