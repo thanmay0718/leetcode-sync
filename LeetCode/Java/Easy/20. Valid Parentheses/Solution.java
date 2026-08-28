@@ -1,5 +1,7 @@
 class Solution {
 
+    // Time Complexity : O(n)
+    // Space Complexity : O(n) 
     private boolean isMatched(char open, char close){
         if((open == '(' && close == ')') ||
             (open == '{' && close == '}') ||
