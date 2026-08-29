@@ -1,15 +1,15 @@
 class Solution {
-    // Brute Force : Because of using extra space
+    // Optimal Approach : No extra space O(1) and traversing time in worst case is O(n)
     public int maxDepth(String s) {
-        Stack<Character> st = new Stack<>();
+        int cnt = 0;
         int max = 0;
         for(int i = 0; i < s.length(); i++){
             char ch = s.charAt(i);
             if(ch == '('){
-                st.push(ch);
-                max = Math.max(max, st.size());
+                cnt++;
+                max = Math.max(max, cnt);
             } else if (ch == ')') {
-                st.pop();
+                cnt--;
             }
         }
         return max;
