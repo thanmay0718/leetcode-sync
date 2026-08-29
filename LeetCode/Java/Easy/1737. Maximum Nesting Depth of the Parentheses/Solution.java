@@ -1,4 +1,5 @@
 class Solution {
+    // Brute Force : Because of using extra space
     public int maxDepth(String s) {
         Stack<Character> st = new Stack<>();
         int max = 0;
