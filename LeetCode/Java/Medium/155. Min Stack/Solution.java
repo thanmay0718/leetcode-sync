@@ -1,5 +1,5 @@
 class MinStack {
-
+    // By using 2 stacks we are pushing the Only minimum elements in our minStack otherwise we are not doing anything in our minStack. 
     private int[] stack;
     private int[] minStack;
     private int top;
@@ -13,10 +13,7 @@ class MinStack {
     }
 
     public void push(int val) {
-
-        top++;
-
-        stack[top] = val;
+        stack[++top] = val;
 
         if (top == 0) {
             minStack[top] = val;
