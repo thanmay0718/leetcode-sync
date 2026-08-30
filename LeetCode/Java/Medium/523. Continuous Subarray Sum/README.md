@@ -8,8 +8,8 @@
 Array, Hash Table, Math, Prefix Sum, Pigeonhole Principle
 
 ### 🚀 Performance
-- **Runtime:** N/A
-- **Memory:** N/A
+- **Runtime:** 27 ms
+- **Memory:** 139.9 MB
 
 ---
 
