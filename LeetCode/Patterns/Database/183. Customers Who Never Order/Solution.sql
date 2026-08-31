@@ -1,5 +1,5 @@
-# Write your MySQL query statement below
-SELECT NAME AS Customers
+-- Write your PostgreSQL query statement below
+SELECT NAME as Customers
 FROM CUSTOMERS
 LEFT JOIN ORDERS
 ON CUSTOMERS.ID = ORDERS.CUSTOMERID
