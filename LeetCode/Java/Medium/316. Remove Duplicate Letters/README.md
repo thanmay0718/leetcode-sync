@@ -1,6 +1,6 @@
 # 📝 316. Remove Duplicate Letters (LeetCode)
 
-🔗 [Problem Link](https://leetcode.com/problems/remove-duplicate-letters)
+🔗 [Problem Link](https://leetcode.com/problems/remove-duplicate-letters/)
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-orange) ![Language](https://img.shields.io/badge/Language-Java-blue)
 
