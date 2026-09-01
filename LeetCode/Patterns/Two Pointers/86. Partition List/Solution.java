@@ -9,26 +9,25 @@
  * }
  */
 class Solution {
-    // Optimized - by using two dummy lists and at the end connecting them without any  extra spaces so, O(1) Space
     public ListNode partition(ListNode head, int x) {
-        ListNode less = new ListNode(0);
-        ListNode great = new ListNode(0);
-        ListNode lessPointer = less;
-        ListNode greatPointer = great;
+        ListNode less = new ListNode(-1);
+        ListNode high = new ListNode(-1);
+        ListNode l = less;
+        ListNode h = high;
 
         ListNode temp = head;
         while(temp != null){
             if(temp.val < x){
-                lessPointer.next = temp;
-                lessPointer = lessPointer.next; 
+                l.next = new ListNode(temp.val);
+                l = l.next;
             } else {
-                greatPointer.next = temp;
-                greatPointer = greatPointer.next;
+                h.next = new ListNode(temp.val);
+                h = h.next;
             }
             temp = temp.next;
         }
-        lessPointer.next = great.next;
-        greatPointer.next = null;
+        l.next = high.next;
+        h.next = null;
         return less.next;
     }
 }
