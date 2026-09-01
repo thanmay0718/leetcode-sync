@@ -1,24 +1,23 @@
 class Solution {
-    // Time & Space Complexity : O(n)
     public int calPoints(String[] operations) {
-        Deque<Integer> st = new ArrayDeque<>();
-        for(String op : operations){
-            if(op.equals("C")){
-                st.pop();
-            } else if (op.equals("D")){
-                st.push(2 * st.peek());
-            } else if (op.equals("+")){
-                int top = st.pop();
-                int newScore = top + st.peek();
-                st.push(top);
-                st.push(newScore);
+        Deque<Integer> stack = new ArrayDeque<>();
+        for(String ch : operations){
+            if(ch.equals("C")){
+                stack.pop();
+            } else if (ch.equals("D")){
+                stack.push(2 * stack.peek());
+            } else if (ch.equals("+")){
+                int top = stack.pop();
+                int newScore = top + stack.peek();
+                stack.push(top);
+                stack.push(newScore);
             } else {
-                st.push(Integer.parseInt(op));
+                stack.push(Integer.parseInt(ch));
             }
         }
         int sum = 0;
-        for(int i : st){
-            sum += i;
+        for(int num : stack){
+            sum += num;
         }
         return sum;
     }
