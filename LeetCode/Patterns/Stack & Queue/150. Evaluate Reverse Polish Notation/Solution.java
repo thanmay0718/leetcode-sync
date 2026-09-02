@@ -1,5 +1,5 @@
 class Solution {
-    
+    // Brute Force Approach (O(n^2)) due to index shifting
     public int evalRPN(String[] tokens) {
         List<String> list = new ArrayList<>(Arrays.asList(tokens));
 
