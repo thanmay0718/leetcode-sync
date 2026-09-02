@@ -1,34 +1,30 @@
 class Solution {
-    // Brute Force Approach (O(n^2)) due to index shifting
     public int evalRPN(String[] tokens) {
-        List<String> list = new ArrayList<>(Arrays.asList(tokens));
+        // Optimal approach using only one extra space and for traversing upto n so O(n) and O(n)
+        Stack<Integer> stack = new Stack<>();
+        for(String t : tokens){
+            if(t.equals("+") || t.equals("-") || t.equals("*") || t.equals("/")){
+                int b = stack.pop();
+                int a = stack.pop();
+                int val = 0;
 
-        while(list.size() > 1){
-            for(int i = 0; i < list.size(); i++){
-                String t = list.get(i);
-
-                if(t.equals("+") || t.equals("-") || t.equals("*") || t.equals("/")){
-                    int a = Integer.parseInt(list.get(i - 2));
-                    int b = Integer.parseInt(list.get(i - 1));
-                    int val = 0;
-
-                    if(t.equals("+")){
-                        val = a + b;
-                    } else if (t.equals("-")) {
-                        val = a - b;
-                    } else if (t.equals("*")){
-                        val = a * b;
-                    } else {
-                        val = a / b;
-                    }
-
-                    list.set(i - 2, String.valueOf(val));
-                    list.remove(i);
-                    list.remove(i - 1);
-                    break;
+                if(t.equals("+")){
+                    val = a + b;
+                    stack.push(val);
+                } else if (t.equals("-")){
+                    val = a - b;
+                    stack.push(val);
+                } else if (t.equals("*")) {
+                    val = a * b;
+                    stack.push(val);
+                } else {
+                    val = a / b;
+                    stack.push(val);
                 }
+            } else {
+                stack.push(Integer.parseInt(t));
             }
         }
-        return Integer.parseInt(list.get(0));
+        return stack.peek();
     }
 }
