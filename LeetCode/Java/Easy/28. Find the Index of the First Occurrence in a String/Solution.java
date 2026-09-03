@@ -1,6 +1,6 @@
 class Solution {
     public int strStr(String haystack, String needle) {
-        // Constant approach O(1)
+        // Constant approach O(n * m)
         if(needle.isEmpty()){
             return -1;
         }
