@@ -1,6 +1,6 @@
 # 📝 227. Basic Calculator II (LeetCode)
 
-🔗 [Problem Link](https://leetcode.com/problems/basic-calculator-ii)
+🔗 [Problem Link](https://leetcode.com/problems/basic-calculator-ii/)
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-orange) ![Language](https://img.shields.io/badge/Language-Java-blue)
 
