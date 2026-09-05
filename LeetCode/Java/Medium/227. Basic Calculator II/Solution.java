@@ -1,6 +1,7 @@
 class Solution {
     public int calculate(String s) {
-    Stack<Integer> stack = new Stack<>();
+    int result = 0;
+    int lastNum = 0;
     int currentNum = 0;
     char prevOp = '+';
 
@@ -11,27 +12,23 @@ class Solution {
             currentNum = currentNum * 10 + (c - '0');
         }
 
-        // Process when we hit an operator or the end of string
         if ((!Character.isDigit(c) && c != ' ') || i == s.length() - 1) {
             if (prevOp == '+') {
-                stack.push(currentNum);
+                result += lastNum;
+                lastNum = currentNum;
             } else if (prevOp == '-') {
-                stack.push(-currentNum);
+                result += lastNum;
+                lastNum = -currentNum;
             } else if (prevOp == '*') {
-                stack.push(stack.pop() * currentNum);
+                lastNum = lastNum * currentNum;
             } else if (prevOp == '/') {
-                stack.push(stack.pop() / currentNum);
+                lastNum = lastNum / currentNum;
             }
             prevOp = c;
             currentNum = 0;
         }
     }
 
-    // Sum all values in the stack
-    int result = 0;
-    for (int val : stack) {
-        result += val;
-    }
-    return result;
+    return result + lastNum;
 }
 }
