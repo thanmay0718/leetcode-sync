@@ -1,34 +1,43 @@
 class Solution {
     public int calculate(String s) {
-    int result = 0;
-    int lastNum = 0;
-    int currentNum = 0;
-    char prevOp = '+';
+        List<Integer> nums = new ArrayList<>();
+        List<Character> ops = new ArrayList<>();
+        int num = 0;
+        for(char ch : s.toCharArray()){
+            if(ch == ' ') continue;
 
-    for (int i = 0; i < s.length(); i++) {
-        char c = s.charAt(i);
-
-        if (Character.isDigit(c)) {
-            currentNum = currentNum * 10 + (c - '0');
-        }
-
-        if ((!Character.isDigit(c) && c != ' ') || i == s.length() - 1) {
-            if (prevOp == '+') {
-                result += lastNum;
-                lastNum = currentNum;
-            } else if (prevOp == '-') {
-                result += lastNum;
-                lastNum = -currentNum;
-            } else if (prevOp == '*') {
-                lastNum = lastNum * currentNum;
-            } else if (prevOp == '/') {
-                lastNum = lastNum / currentNum;
+            if(Character.isDigit(ch)){
+                num = num * 10 + (ch - '0');
+            } else {
+                nums.add(num);
+                ops.add(ch);
+                num = 0;
             }
-            prevOp = c;
-            currentNum = 0;
         }
-    }
+        nums.add(num);
 
-    return result + lastNum;
-}
+        for(int i = 0; i < ops.size();){
+            if(ops.get(i) == '*' || ops.get(i) == '/'){
+                int a = nums.get(i);
+                int b = nums.get(i + 1);
+                int val = (ops.get(i) == '*') ? a * b : a / b;
+
+                nums.set(i, val);
+                nums.remove(i + 1);
+                ops.remove(i);
+            } else {
+                i++;
+            }
+        }
+
+        int res = nums.get(0);
+        for(int i = 0; i < ops.size(); i++){
+            if(ops.get(i) == '+') {
+                res += nums.get(i + 1);
+            } else {
+                res -= nums.get(i + 1);
+            }
+        }
+        return res;
+    }
 }
