@@ -1,4 +1,5 @@
 class Solution {
+    // Brute Force Logic (O(n^2))
     public int[] nextGreaterElements(int[] nums) {
         int[] greaterEle = new int[nums.length];
         Arrays.fill(greaterEle, -1);
