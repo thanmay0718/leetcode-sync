@@ -7,6 +7,7 @@ class Solution {
         for(int i = 0; i < nums.length; i++){
             int cur = nums[i];
             for(int j = 1; j < nums.length; j++){
+                // Circular Path
                 int val = (j + i) % nums.length;
                 if(nums[val] > cur){
                     greaterEle[i] = nums[val];
