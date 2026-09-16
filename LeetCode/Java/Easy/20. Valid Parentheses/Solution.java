@@ -1,35 +1,28 @@
 class Solution {
-    // Time Complexity : O(n)
-    // Space Complexity : O(n) 
-    private boolean isMatched(char open, char close){
+
+    private boolean matchCheck(char open, char close){
         if((open == '(' && close == ')') ||
             (open == '{' && close == '}') ||
-            (open == '[' && close == ']'))
-            {
-                return true;
-            }
+            (open == '[' && close == ']')
+        ){
+            return true;
+        }
         return false;
     }
-
     public boolean isValid(String s) {
-        Stack< Character > st = new Stack<>();
+        Deque<Character> stack = new ArrayDeque<>();
         for(int i = 0; i < s.length(); i++){
-            if((s.charAt(i) == '(') ||
-               (s.charAt(i) == '{') ||
-               (s.charAt(i) == '['))
-            {
-                st.push(s.charAt(i));
+            char ch = s.charAt(i);
+            if(ch == '(' || ch == '{' || ch == '['){
+                stack.push(ch);
             } else {
-                if(st.isEmpty()){
-                    return false;
-                }
-                char open = st.peek();
-                st.pop();
-                if(!isMatched(open, s.charAt(i))){
+                char open = stack.peek();
+                stack.pop();
+                if(!matchCheck(open, ch)){
                     return false;
                 }
             }
         }
-        return st.isEmpty();
+        return stack.isEmpty();
     }
 }
