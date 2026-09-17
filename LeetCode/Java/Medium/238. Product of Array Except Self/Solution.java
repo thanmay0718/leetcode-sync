@@ -3,14 +3,17 @@ class Solution {
         int n = nums.length;
         int[] result = new int[n];
 
-        for (int i = 0; i < n; i++) {
-            int product = 1;
-            for (int j = 0; j < n; j++) {
-                if (j != i) {
-                    product *= nums[j];
-                }
-            }
-            result[i] = product;
+        // First pass: store prefix products in result
+        result[0] = 1;
+        for (int i = 1; i < n; i++) {
+            result[i] = result[i - 1] * nums[i - 1];
+        }
+
+        // Second pass: multiply suffix products in-place
+        int suffixProduct = 1;
+        for (int i = n - 1; i >= 0; i--) {
+            result[i] *= suffixProduct;
+            suffixProduct *= nums[i];
         }
 
         return result;
