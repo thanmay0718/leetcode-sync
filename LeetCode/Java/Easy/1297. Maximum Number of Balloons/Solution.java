@@ -1,5 +1,6 @@
 class Solution {
     public int maxNumberOfBalloons(String text) {
+        // Optimized by using HashMap / we can also do with array by cnt characters 
         HashMap<Character, Integer> map = new HashMap<>();
         for(char ch : text.toCharArray()){
             map.put(ch, map.getOrDefault(ch, 0) + 1);
