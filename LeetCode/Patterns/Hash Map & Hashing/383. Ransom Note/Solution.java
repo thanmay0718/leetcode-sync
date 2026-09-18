@@ -9,6 +9,7 @@ class Solution {
             d[magazine.charAt(i) - 'a']--;
         }
 
+
         for(int i = 0; i < d.length; i++){
             if(d[i] > 0){
                 return false;
