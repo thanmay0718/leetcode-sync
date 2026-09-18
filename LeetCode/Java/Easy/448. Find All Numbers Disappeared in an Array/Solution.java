@@ -1,17 +1,17 @@
 class Solution {
-    // Extra Space = O(n) => Brute Force
+    // O(1) => Optimized
     public List<Integer> findDisappearedNumbers(int[] nums) {
-        Set<Integer> set = new HashSet<>();
-        for(int i : nums){
-            set.add(i);
+    for (int i = 0; i < nums.length; i++) {
+        int index = Math.abs(nums[i]) - 1;
+        if (nums[index] > 0) {
+            nums[index] = -nums[index];
         }
-
-        List<Integer> list = new ArrayList<>();
-        for(int i = 1; i <= nums.length; i++){
-            if(!set.contains(i)){
-                list.add(i);
-            }
-        }
-        return list;
     }
+    List<Integer> result = new ArrayList<>();
+    for (int i = 0; i < nums.length; i++) {
+        if (nums[i] > 0)
+            result.add(i + 1);
+    }
+    return result;
+}
 }
