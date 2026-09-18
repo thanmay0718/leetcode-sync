@@ -3,7 +3,7 @@
 Track your progress on the Grind 100 coding interview preparation list.
 
 ## Progress
-- **Completed:** 16 / 100 (16.0%)
+- **Completed:** 17 / 100 (17.0%)
 
 ---
 
@@ -20,7 +20,7 @@ Track your progress on the Grind 100 coding interview preparation list.
 - [ ] Trapping Rain Water
 - [ ] Find the Duplicate Number
 - [x] [Majority Element](./Java/Easy/169. Majority Element/)
-- [ ] Find All Numbers Disappeared in an Array
+- [x] [Find All Numbers Disappeared in an Array](./Java/Easy/448. Find All Numbers Disappeared in an Array/)
 
 ### 📂 Subarray & Sliding Window
 - [ ] Maximum Subarray
