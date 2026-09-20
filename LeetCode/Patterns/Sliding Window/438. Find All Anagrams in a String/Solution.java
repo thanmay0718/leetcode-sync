@@ -1,5 +1,6 @@
 class Solution {
     public List<Integer> findAnagrams(String s, String p) {
+        // Brute force : (O(n * n log n))
         List<Integer> list = new ArrayList<>();
         int slen = s.length();
         int plen = p.length();
