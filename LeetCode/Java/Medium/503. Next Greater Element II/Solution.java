@@ -1,4 +1,5 @@
 class Solution {
+    // Optimal Solution : Monotonic Stack O(n) both time and space complexities
     public int[] nextGreaterElements(int[] nums) {
         int n = nums.length;
         int[] nxtGre = new int[n];
