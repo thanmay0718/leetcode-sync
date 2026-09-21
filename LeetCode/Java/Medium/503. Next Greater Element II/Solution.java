@@ -1,20 +1,20 @@
 class Solution {
-    // Brute Force Logic (O(n^2))
     public int[] nextGreaterElements(int[] nums) {
-        int[] greaterEle = new int[nums.length];
-        Arrays.fill(greaterEle, -1);
-
-        for(int i = 0; i < nums.length; i++){
-            int cur = nums[i];
-            for(int j = 1; j < nums.length; j++){
-                // Circular Path
-                int val = (j + i) % nums.length;
-                if(nums[val] > cur){
-                    greaterEle[i] = nums[val];
-                    break;
-                }
+        int n = nums.length;
+        int[] nxtGre = new int[n];
+        Deque<Integer> st = new ArrayDeque<>();
+        for(int i = 2 * n - 1; i >= 0; i--){
+            int ind = i % n;
+            int curr = nums[ind];
+            while(!st.isEmpty() && st.peek() <= curr){
+                st.pop();
             }
+
+            if(i < n){
+                nxtGre[i] = st.isEmpty() ? -1 : st.peek();
+            }
+            st.push(curr);
         }
-        return greaterEle;
+        return nxtGre;
     }
 }
