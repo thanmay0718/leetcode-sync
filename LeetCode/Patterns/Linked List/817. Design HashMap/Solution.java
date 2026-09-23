@@ -1,4 +1,5 @@
 class MyHashMap {
+    // Time Complexity : O(1)
     int[] map;
     public MyHashMap() {
         map = new int[1000001];
