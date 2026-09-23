@@ -3,7 +3,7 @@
 Track your progress on the Curated 100hrs DSA core interview preparation list.
 
 ## Progress
-- **Completed:** 1 / 238 (0.4%)
+- **Completed:** 2 / 238 (0.8%)
 
 ---
 
@@ -288,7 +288,7 @@ Track your progress on the Curated 100hrs DSA core interview preparation list.
 - [ ] Add Two Numbers
 - [ ] Convert Binary Number in a Linked List to Integer
 - [ ] Design HashSet
-- [ ] Design HashMap
+- [x] [Design HashMap](./Java/Easy/706. Design HashMap/)
 
 ### 📂 PART  2: STACKS Topics Covered: 1. Stack
 - [ ] Evaluate Reverse Polish Notation
