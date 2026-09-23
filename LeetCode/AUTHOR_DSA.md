@@ -288,7 +288,7 @@ Track your progress on the Curated 100hrs DSA core interview preparation list.
 - [ ] Add Two Numbers
 - [ ] Convert Binary Number in a Linked List to Integer
 - [ ] Design HashSet
-- [x] [Design HashMap](./Java/Easy/706. Design HashMap/)
+- [x] [Design HashMap](./Java/Easy/817. Design HashMap/)
 
 ### 📂 PART  2: STACKS Topics Covered: 1. Stack
 - [ ] Evaluate Reverse Polish Notation

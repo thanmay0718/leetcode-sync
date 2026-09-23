@@ -52,7 +52,7 @@ Track your progress on the Curated 100hrs Advanced DSA interview preparation lis
 
 ### 📂 Module  1.7: DesignBased Linked List Pro
 - [ ] Design HashSet
-- [x] [Design HashMap](./Java/Easy/706. Design HashMap/)
+- [x] [Design HashMap](./Java/Easy/817. Design HashMap/)
 - [ ] Design Browser History
 
 ### 📂 Module  1.8: Matrix & Hybrid Linked List
