@@ -1,5 +1,6 @@
 class Solution {
     public String removeKdigits(String num, int k) {
+        // Optimal Solution : O(3n) + O(k) => O(n)
         Deque<Character> st = new ArrayDeque<>();
         for(int i = 0; i < num.length(); i++){
             char digit = num.charAt(i);
