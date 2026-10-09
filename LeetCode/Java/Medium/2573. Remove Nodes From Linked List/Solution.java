@@ -1,9 +1,9 @@
 import java.util.Stack;
-
+// Monotonic Stack 
 class Solution {
     public ListNode removeNodes(ListNode head) {
 
-        Stack<ListNode> stack = new Stack<>();
+        Deque<ListNode> stack = new ArrayDeque<>();
         ListNode temp = head;
 
         while (temp != null) {
