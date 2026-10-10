@@ -6,7 +6,6 @@ class Solution {
         Set<Integer> types = new HashSet<>();
         int count = 0;
 
-        // Expand right from i, collecting until we hit a 3rd type
         for (int j = i; j < fruits.length; j++) {
             types.add(fruits[j]);
             if (types.size() > 2) break;
