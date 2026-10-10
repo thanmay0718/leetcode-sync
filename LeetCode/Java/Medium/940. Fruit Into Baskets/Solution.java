@@ -1,4 +1,5 @@
 class Solution {
+    // Time and Space Complexity = O(n) 
     public int totalFruit(int[] fruits) {
         int maxFruits = 0;
         int l = 0;
