@@ -1,5 +1,6 @@
 class Solution {
-    public int totalFruits(int[] fruits) {
+    
+    public int totalFruit(int[] fruits) {
         int maxFruits = 0;
         int l = 0;
         int r = 0;
